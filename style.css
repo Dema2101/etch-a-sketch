@@ -1,8 +1,7 @@
 #container{
-  position: relative;
-  top: 30px;
+flex-direction: row-reverse;
  outline:1px solid black;
-  margin: 0 auto;
+  margin: 15vh auto;
   height: 480px;
   width: 480px;
 }
@@ -10,3 +9,4 @@
 .grid{
   box-sizing: border-box;
 }
+
