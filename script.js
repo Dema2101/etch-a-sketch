@@ -29,21 +29,22 @@ adjust.textContent="Hello";
 
 function hovering(){
   const cells=document.querySelectorAll(".grid");
-  cells.forEach(cell => {
+  let isDrawing=false;
+  document.addEventListener("mousedown", () => isDrawing=true);
+  document.addEventListener("mouseup", () => isDrawing=false);
 
-  cell.addEventListener("mouseover", () => {
+  cells.forEach( cell =>{
+    cell.addEventListener("mouseover", () => {
 
+      if(!isDrawing) return;
 
-let x = Math. floor(Math. random() * 256);
-let y = Math. floor(Math. random() * 256);
-let z = Math. floor(Math. random() * 256);
-    
-    cell.style.backgroundColor = `rgb(${x},${y},${z})`;
-    
-});
+      const x = Math.floor(Math.random() * 256);
+      const y = Math.floor(Math.random() * 256);
+      const z = Math.floor(Math.random() * 256);
 
-});
-
+      cell.style.backgroundColor=`rgb(${x},${y},${z})`;
+    })
+  })
 }
 
 

@@ -4,6 +4,7 @@ flex-direction: row-reverse;
   margin: 15vh auto;
   height: 480px;
   width: 480px;
+  user-select: none;
 }
 
 .grid{
