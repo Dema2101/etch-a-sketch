@@ -1,0 +1,12 @@
+#container{
+  position: relative;
+  top: 30px;
+ outline:1px solid black;
+  margin: 0 auto;
+  height: 480px;
+  width: 480px;
+}
+
+.grid{
+  box-sizing: border-box;
+}
