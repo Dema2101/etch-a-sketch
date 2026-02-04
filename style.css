@@ -1,7 +1,7 @@
 #container{
 flex-direction: column-reverse;
  outline:1px solid black;
-  margin: 0 auto;
+   margin: 0 auto 50px auto;
   height: 960px;
   width: 960px;
 }

@@ -1,7 +1,7 @@
 let velicina = 16;
 
 const controls = document.querySelector("#controls"); 
-controls.style.marginTop="10vh";
+controls.style.marginTop="3vh";
 controls.style.marginBottom="20px";
 controls.style.display="flex";
 controls.style.justifyContent="center";
