@@ -1,5 +1,6 @@
 const container = document.querySelector("#container");
-
+const sizeBtn = document.createElement("button");
+sizeBtn.textContent="Veličina";
 
 
 function createGrid(velicina){
@@ -28,26 +29,40 @@ adjust.textContent="Hello";
 
 
 function hovering(){
-  const cells=document.querySelectorAll(".grid");
-  let isDrawing=false;
-  document.addEventListener("mousedown", () => isDrawing=true);
-  document.addEventListener("mouseup", () => isDrawing=false);
 
-  cells.forEach( cell =>{
-    cell.addEventListener("mouseover", () => {
+  const cells = document.querySelectorAll(".grid");
+  let isDrawing = false;
 
-      if(!isDrawing) return;
+  function paint (cell){
+    if (!isDrawing) return;
+    
+    const x = Math.floor(Math.random()*256);
+    const y = Math.floor(Math.random()*256);
+    const z = Math.floor(Math.random()*256);
+    cell.style.backgroundColor = `rgb(${x},${y},${z})`;
+  }
 
-      const x = Math.floor(Math.random() * 256);
-      const y = Math.floor(Math.random() * 256);
-      const z = Math.floor(Math.random() * 256);
+    cells.forEach(cell => { 
+      cell.addEventListener("mousedown", (e)=> {
+        e.preventDefault();
+        isDrawing=true;
+        paint(cell);
+      })
+    
+      cell.addEventListener("mouseover", () => {
+        if(!isDrawing) return;
+        paint(cell);
+      });
+    
+    });
+ 
 
-      cell.style.backgroundColor=`rgb(${x},${y},${z})`;
-    })
-  })
+    document.addEventListener("mouseup", () => {
+      isDrawing=false;
+    });
+
 }
 
 
-
-createGrid(8);
+createGrid(16);
 hovering();
